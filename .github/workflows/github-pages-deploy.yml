@@ -10,7 +10,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Install and Build 🔧 
         run: |
           npm i -g geneasy
           geneasy -t index.hbs -o public/index.html links.yml
@@ -20,5 +20,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: public # The folder the action should deploy.
+          branch: gh-pages # 指定了部署目标分支，即 GitHub Actions 将会把内容部署到 gh-pages 分支。
+          folder: public # 指定了源文件夹，即 GitHub Actions 将会从你的仓库中你这指定文件夹获取内容进行部署。
